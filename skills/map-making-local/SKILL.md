@@ -1,3 +1,8 @@
+---
+name: map-making-local
+description: Personal local-only cartography workflow for fictional, fantasy, TTRPG, Wolfdream, and DND maps under C:\Personal stuff. Use for readable map design, reconstruction, iteration, and validation. Never register or deploy this skill to m-skills.
+---
+
 # Map-making Local Skill
 
 Use this personal skill when the user asks to create, revise, reconstruct, or continue a fictional/fantasy/TTRPG map, especially for Wolfdream or another personal creative project. The goal is not just to draw a pretty image: build a readable, geographically coherent, narrative-useful map through explicit cartographic reasoning and iterative validation.
@@ -8,8 +13,16 @@ Use this personal skill when the user asks to create, revise, reconstruct, or co
 - Do not use work/M365 data, WorkIQ, Outlook, Teams, SharePoint, FTOP, Lynx, FTBI, S360, Seismic, enterprise MCP servers, customer systems, or enterprise skills.
 - For Wolfdream artifacts, ring-fence all file access to `C:\Personal stuff` and its subfolders.
 - Refuse to read from or write to any path outside `C:\Personal stuff` unless the user explicitly confirms a one-off exception.
+- This is a personal local skill only. Do not register it with Scout, do not copy it into `~\.scout\m-skills` or `~\.copilot\m-skills`, and do not try to make it pass Skill Guard.
 - Do not mix map artifacts with FastTrack/work skill folders, work datasets, customer data, tenant data, or M365-derived content.
 - If the user asks to prepare a file for personal printing or personal sharing, prefer the Purview `Non-business/Personal` sensitivity label when available; do not apply labels automatically without an explicit request.
+
+## Routing and related local skills
+
+- Use `wolfdream-local` when the map task depends on Wolfdream prose canon, timeline, character canon, or French-language manuscript decisions.
+- Use `dnd-local` when the map belongs to a DND campaign project and needs quest/location/faction continuity.
+- Use `homebrewery-local` only if the final map/source needs to be referenced or embedded in a Homebrewery brew.
+- Stay local: no enterprise skills, no m-skills deployment, and no shared-skill runtime edits.
 
 ## Core philosophy
 
@@ -49,6 +62,15 @@ Before drawing, extract or ask for:
 6. Control label density: use either a direct label or a number, not both, unless there is a strong readability reason.
 7. Iterate in named versions and preserve prior versions.
 8. Add manuscript/fantasy finish only after geographic validation.
+
+## Fallbacks
+
+- If editable source exists, use it as the base and preserve the previous version before changing it.
+- If only a rendered image exists, create a new editable reconstruction source when the requested change is structural; use pixel retouching only for small cosmetic fixes.
+- If the prompt is under-specified, produce a low-risk draft map plan or ask for the missing anchor rather than inventing key canon.
+- If image generation or rendering produces illegible labels, simplify labels/legend and regenerate rather than layering corrections on a bad base.
+- If a generated artifact lands outside `C:\Personal stuff`, move it into the active personal project folder or delete it.
+- If map work touches Homebrewery, keep the rendered map and source in the local project first, then hand off to `homebrewery-local` for live brew updates.
 
 ## Recommended symbol grammar
 
